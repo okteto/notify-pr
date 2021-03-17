@@ -1,0 +1,14 @@
+name: "Notify PR"
+description: "Send a message to the pull request"
+inputs:
+  message: 
+    description: 'The message'
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.message }}
+branding:
+  color: 'green'
+  icon: book-open
