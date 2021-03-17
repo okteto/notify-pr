@@ -21,7 +21,7 @@ pr = event["number"]
 
 github = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
 comments = github.issue_comments(repo, pr)
-exists = coms.find { |c| c["body"] == message }
+exists = comments.find { |c| c["body"] == message }
 
 if exists
     puts "Message already exists in the PR"
