@@ -19,6 +19,11 @@ You can use this action to enable your CI/CD workflow in [Okteto Cloud](https://
 
 The message to send to the PR
 
+## Environment variables
+
+### `CUSTOM_CERTIFICATE`
+
+The self-signed certificate of your environment. Best set on global level when using multiple Okteto actions.
 
 # Example usage
 

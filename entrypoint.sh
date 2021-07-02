@@ -12,6 +12,12 @@ if ENV["GITHUB_EVENT_NAME"] != "pull_request"
     exit(1)
 end
 
+if ENV["CUSTOM_CERTIFICATE"]
+    puts "Custom certificate is provided"
+    `echo "$CUSTOM_CERTIFICATE" > /usr/local/share/ca-certificates/custom_certificate_crt`
+    `update-ca-certificates`
+end
+
 message = ARGV[0]
 repo = ENV["GITHUB_REPOSITORY"]
 
