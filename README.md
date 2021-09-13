@@ -41,23 +41,23 @@ jobs:
       uses: actions/checkout@master    
 
     - name: Login
-      uses: okteto/login@master
+      uses: okteto/login@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
 
     - name: "Activate Namespace"
-      uses: okteto/namespace@master
+      uses: okteto/namespace@latest
       with:
         name: cindylopez
     
     - name: "Trigger the pipeline"
-      uses: okteto/pipeline@master
+      uses: okteto/pipeline@latest
       with:
         name: pr-${{ github.event.number }}
         timeout: 8m
     
     - name: comment PR
-      uses: okteto/notify-pr@master
+      uses: okteto/notify-pr@latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
