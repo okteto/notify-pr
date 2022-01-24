@@ -57,9 +57,9 @@ jobs:
         timeout: 8m
     
     - name: comment PR
-      uses: okteto/notify-pr@latest
+      uses: okteto/notify-pr@v1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        msg: "Preview environment available at https://movies-pr-${{ github.event.number }}-cindylopez.cloud.okteto.net"
+        message: "Preview environment available at https://movies-pr-${{ github.event.number }}-cindylopez.cloud.okteto.net"
 ```
